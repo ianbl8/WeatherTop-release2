@@ -1,0 +1,37 @@
+<div class="ui five column grid">
+  <div class="stretched row">
+    <div class="column">
+      <div class="ui inverted segment">
+        <p><span class="ui large text"><strong>${_station.name}</strong></span></p>
+        <p><span class="ui medium text">Most recent readings</span></p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui inverted segment">
+        <p><strong><span class="ui large text">Weather</span></strong></p>
+        <p>${_station.latestReading()?.getWeather()}</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui inverted segment">
+        <p><strong><span class="ui large text">Temperature</span></strong></p>
+        <p>${_station.latestReading()?.temperature}°C<br>${_station.latestReading()?.getFahrenheit(_station.latestReading()?.temperature)}°F
+        </p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui inverted segment">
+        <p><strong><span class="ui large text">Wind Speed</span></strong></p>
+        <p>${_station.latestReading()?.getBeaufort()} bft, ${_station.latestReading()?.getDirection()}<br>Feels like
+          ${_station.latestReading()?.getWindChill()?.round(1)}°C/${_station.latestReading()?.getFahrenheit(_station.latestReading()?.getWindChill())?.round(1)}°F
+        </p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui inverted segment">
+        <p><strong><span class="ui large text">Pressure</span></strong></p>
+        <p>${_station.latestReading()?.pressure} hPa</p>
+      </div>
+    </div>
+  </div>
+</div>
