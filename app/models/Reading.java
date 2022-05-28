@@ -3,6 +3,7 @@ package models;
 import javax.persistence.Entity;
 
 import play.db.jpa.Model;
+import play.Logger;
 
 import java.util.HashMap;
 
@@ -101,8 +102,7 @@ public class Reading extends Model {
   }
 
   public String getWeather() {
-    String weather = "No reading";
-
+    String weather = null;
     HashMap<Integer, String> weatherCodes = new HashMap<Integer, String>();
     weatherCodes.put(100, "Clear");
     weatherCodes.put(200, "Partial clouds");
@@ -113,9 +113,23 @@ public class Reading extends Model {
     weatherCodes.put(700, "Snow");
     weatherCodes.put(800, "Thunder");
     weather = weatherCodes.get(this.code);
-
     return weather;
   }
 
+
+  public String getWeatherIcon() {
+    String weatherIcon;
+    HashMap<Integer, String> weatherCodes = new HashMap<Integer, String>();
+    weatherCodes.put(100, "big yellow sun icon");
+    weatherCodes.put(200, "big cloud sun icon");
+    weatherCodes.put(300, "big grey cloud icon");
+    weatherCodes.put(400, "big yellow cloud sun rain icon");
+    weatherCodes.put(500, "big grey cloud showers heavy icon");
+    weatherCodes.put(600, "big grey cloud rain icon");
+    weatherCodes.put(700, "big white snowflake icon");
+    weatherCodes.put(800, "big yellow bolt icon");
+    weatherIcon = weatherCodes.get(this.code);
+    return weatherIcon;
+  }
 
 }
