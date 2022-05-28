@@ -15,8 +15,8 @@ public class Dashboard extends Controller {
     render("dashboard.html", stations);
   }
 
-  public static void addStation(String name) {
-    Station station = new Station (name);
+  public static void addStation(String name, double latitude, double longitude) {
+    Station station = new Station (name, latitude, longitude);
     Logger.info("Adding Station: " + name);
     station.save();
     redirect("/dashboard");
