@@ -1,13 +1,9 @@
-# WeatherTop: version v006
+# WeatherTop: Release 1
 
-This is **v006** of the WeatherTop web application, which meets the following criteria:
+This is **Release 1** of the WeatherTop web application, which meets the following criteria:
 
-This leads from **baseline** to **release1**.
-- **Readings**: Code, Temperature, Wind Speed, Wind Direction and Pressure fields are used
-- **Stations**: Name and Latest Weather are displayed for each station, with a grid showing the latest readings using text terms for the weather, temperature in °C and °F, wind speed in the Beaufort scale, wind direction and wind chill in °C and °F, and pressure in hPa. A table listing all readings for each station appear below the grid.
+- **Readings**: Code, Temperature, Wind Speed, Wind Direction and Pressure fields are all used
+- **Stations**: The station name and current readings are displayed for each station in a grid. This uses text terms for the weather, and displays the temperature in °C and °F, the wind speed in the Beaufort scale, the wind direction as a compass bearing, the wind chill in °C and °F, and pressure in hPa. A table listing all readings for the station appears below the grid.
 - **Member**: *not for this version*
-- **Features**: the station details and readings are read from `/conf/data.yml` and displayed together on the dashboard page.
-- **Code**: the files are saved in a zipped archive
-
-To build:
-- **Stations**: Dashboard to show station names and Open button. Details for each station to be displayed as now but on separate page. Input for new readings to be accepted on the new page.
+- **Features**: Initial station details and readings are read from `/conf/data.yml`. The Dashboard page displays a station list with folder buttons to open each station's page, and a section to add a new station (name only). The Station pages include a section to add readings for that station.
+- **Code**: Files have been pushed to a Github repo using SmartGit (Sourcetree is sadly not available on Linux).
