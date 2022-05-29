@@ -4,6 +4,11 @@
 
 # Home page
 GET     /                                       Start.index
+GET     /signup                                 Accounts.signup
+GET     /login                                  Accounts.login
+POST    /register                               Accounts.register
+POST    /authenticate                           Accounts.authenticate
+GET     /logout                                 Accounts.logout
 GET     /about                                  About.index
 GET     /dashboard                              Dashboard.index
 POST    /dashboard/addstation                   Dashboard.addStation

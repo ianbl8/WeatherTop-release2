@@ -15,6 +15,7 @@ public class Member extends Model {
   public String password;
   public String firstname;
   public String lastname;
+
   @OneToMany(cascade = CascadeType.ALL)
   public List<Station> stations = new ArrayList<Station>();
 
@@ -24,4 +25,13 @@ public class Member extends Model {
     this.firstname = firstname;
     this.lastname = lastname;
   }
+
+  public static Member findByEmail(String email) {
+    return find("email", email).first();
+  }
+
+  public boolean checkPassword(String password) {
+    return this.password.equals(password);
+  }
+
 }
