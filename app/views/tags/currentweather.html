@@ -44,10 +44,10 @@
         <p><strong><span class="ui large text">Temperature</span></strong></p>
         <p>
           #{if _station.latestReading()}
-            ${_station.latestReading()?.temperature}°C<br>${_station.latestReading()?.getFahrenheit(_station.latestReading()?.temperature)}°F
+            ${_station.latestReading()?.temperature}°C<br>${_station.latestReading()?.getFahrenheit(_station.latestReading()?.temperature).round(1)}°F
         </p>
         <p>
-          Max ${_station.maxTemperature()}°C / ${_station.latestReading()?.getFahrenheit(_station.maxTemperature())}°F<br>Min ${_station.minTemperature()}°C / ${_station.latestReading()?.getFahrenheit(_station.minTemperature())}°F
+          Max ${_station.maxTemperature()}°C / ${_station.latestReading()?.getFahrenheit(_station.maxTemperature()).round(1)}°F<br>Min ${_station.minTemperature()}°C / ${_station.latestReading()?.getFahrenheit(_station.minTemperature()).round(1)}°F
           #{/if}
           #{else}
           <em>No readings</em>
