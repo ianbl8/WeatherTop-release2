@@ -6,7 +6,9 @@
 <section class="ui segment">
   <section class="ui raised segment">
     #{currentweather station:station/}
-    #{listreadings station:station/}
+    #{if station.readings}
+      #{listreadings station:station/}
+    #{/if}
     #{addreading station:station/}
   </section>
 </section>
